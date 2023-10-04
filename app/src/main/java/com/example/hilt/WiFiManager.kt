@@ -1,8 +1,9 @@
 package com.example.hilt
 
 import android.util.Log
+import javax.inject.Inject
 
-class WiFiManager(private val settings: WiFiSettings) {
+class WiFiManager @Inject constructor(private val settings: WiFiSettings) {
     fun connect() {
         settings.openConnection()
     }
@@ -13,7 +14,7 @@ class WiFiManager(private val settings: WiFiSettings) {
     }
 }
 
-class WiFiSettings {
+class WiFiSettings @Inject constructor() {
     fun openConnection() {
         Log.d("MyLog", "CONNECTED")
     }
