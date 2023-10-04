@@ -5,8 +5,8 @@ import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class WiFiManager @Inject constructor(private val settings: WiFiSettings) {
+
+class WiFiManager (private val settings: WiFiSettings) {
     fun connect() {
         settings.openConnection()
     }
